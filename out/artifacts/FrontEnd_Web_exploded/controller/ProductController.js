@@ -21,6 +21,42 @@ $("#btnSaveProduct").click(function () {
     });
 });
 
+function loadDetail() {
+    $.ajax({
+        url: 'product',
+        method: 'get',
+        async: true,
+        dataType: "json",
+        success: function (data, textState, xhr) {
+
+            for (let pr of data) {
+                let h5 = `${pr.proName}`;
+                $("#header1").text(h5);
+            }
+        }
+    });
+}
+
+$("#btnSendFile").click(function () {
+
+    var fileObject = $("#file")[0].files[0];
+    var fileName = $("#file")[0].files[0].name;
+
+    var data = new FormData();
+    data.append("file", fileObject, fileName);
+
+    $.ajax({
+        url: 'up',
+        method: 'post',
+        async: true,
+        processData: false,
+        contentType: false,
+        data: data,
+        success: function () {
+            alert("File Uploaded");
+        }
+    });
+});
 
 function loadAllProducts() {
     $("#tblProduct").empty();

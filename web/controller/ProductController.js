@@ -21,6 +21,22 @@ $("#btnSaveProduct").click(function () {
     });
 });
 
+function loadDetail() {
+    $.ajax({
+        url: 'product',
+        method: 'get',
+        async: true,
+        dataType: "json",
+        success: function (data, textState, xhr) {
+
+            for (let pr of data) {
+                let h5 = `${pr.proName}`;
+                $("#header1").text(h5);
+            }
+        }
+    });
+}
+
 $("#btnSendFile").click(function () {
 
     var fileObject = $("#file")[0].files[0];

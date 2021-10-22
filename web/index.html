@@ -634,6 +634,7 @@
             margin: auto;
         }
 
+
     </style>
 </head>
 <body>
@@ -729,7 +730,7 @@
     <section><div></div><div></div><div></div><div></div></section>
     <section></section>
     <section>
-        <h5>Regent Bedroom Suite</h5>
+        <h5 id="header1"></h5>
         <li>Bed (75'x 48')    Rs.30,275</li>
         <li>3 Door Wardrobe   Rs.41,000</li>
         <li>Dressing Table    Rs.18,000</li>
@@ -775,8 +776,12 @@
                 </div>
                 <div class="row">
                     <div class="col-9">
-                        <label class="form-label" for="file">Upload Photo NIC Card or license Card</label>
+                        <label class="form-label" for="file">Upload Photo</label>
                         <input class="form-control" id="file" name="file" type="file">
+                    </div>
+                    <div class="col-9">
+                        <label class="form-label" for="file">Upload Photo</label>
+                        <input class="form-control" id="file3" name="file" type="file">
                     </div>
                     <div class="col-2 mt-3">
                         <button class="btn btn-dark mt-3" id="btnSendFile" type="button">Upload</button>
@@ -809,10 +814,86 @@
 </section>
 </section>
 
+<section id="loginContent" class="container p-5 mt-auto">
+    <div class="container">
+
+       <div class="jumbotron">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="card">
+                    <div class="card-header bg-primary font-weight-bolder text-center">Login</div>
+                    <div class="card-body">
+                        <form id="formLogin">
+                            <div>
+                                <label class="form-label" for="userId">User Name</label>
+                                <input class="form-control" id="userId" name="userId" type="text">
+                            </div>
+                            <div>
+                                <label class="form-label" for="password">Password</label>
+                                <input class="form-control" id="password" name="password" type="Password">
+                            </div>
+                            <div class="row-cols-1 mt-3">
+                                <button class="btn btn-primary" id="btnLogin" type="button">Login</button>
+
+                            </div>
+
+                            <div class="row-cols-1 mt-3">
+                                <label class="form-label" for="password">don't have account?</label>
+                                <button class="btn btn-success" id="btnSignForm" type="button">Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+    </div>
+    </div>
+</section>
+
+<!--<section id="signInContent" class="container">-->
+<!--    <div class="container">-->
+<!--        &lt;!&ndash;main tile&ndash;&gt;-->
+<!--        &lt;!&ndash;        <div class="jumbotron pt-5">&ndash;&gt;-->
+<!--        <div class="row">-->
+<!--            <div class="col-lg-4">-->
+<!--                <div class="card">-->
+<!--                    <div class="card-header bg-primary font-weight-bolder text-center">Sign In</div>-->
+<!--                    <div class="card-body">-->
+<!--                        <form id="formSignIn">-->
+<!--                            <div>-->
+<!--                                <label class="form-label" for="sUserId">User Name</label>-->
+<!--                                <input class="form-control" id="sUserId" name="userId" type="text">-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <label class="form-label" for="sPassword">Password</label>-->
+<!--                                <input class="form-control" id="sPassword" name="password" type="Password">-->
+<!--                            </div>-->
+<!--                            <div class="row-cols-1 mt-3">-->
+<!--                                <button class="btn btn-primary" id="btnSignIn" type="button">Sign in</button>-->
+
+<!--                            </div>-->
+
+<!--                            <div class="row-cols-1 mt-3">-->
+<!--                                <button class="btn btn-success" id="btnLoginForm" type="button">Login</button>-->
+<!--                            </div>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </div>-->
+<!--    </div>-->
+<!--</section>-->
+
 <script src="assests/js/jquery-3.5.1.min.js"></script>
+
 <script src="controller/DashboardController.js"></script>
 <script src="controller/ProductController.js"></script>
 <script src="controller/AboutController.js"></script>
 <script src="controller/ContactController.js"></script>
+<script src="controller/SignInController.js"></script>
+
 </body>
 </html>
