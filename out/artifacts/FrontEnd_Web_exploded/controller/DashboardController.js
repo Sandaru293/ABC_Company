@@ -1,37 +1,15 @@
 hideAll();
 $("#loginContent").css('display', 'block');
 
-// $("#dashboardContent").css('display', 'block');
-// $("#nav").text("Dashboard");
+$("#dashboardContent").css('display', 'block');
+$("#nav").text("Dashboard");
 
-// $('#lnkHome').click(function () {
-//     hideAll();
-//     $("#dashboardContent").css('display', 'block');
-//     $("#nav").text("Dashboard");
-//     text = $('#nav').text();
-// });
-//
-// $('#lnkCustomer').click(function () {
-//     $("#txtCustomerID").focus();
-//     hideAll();
-//     $("#customerContent").css('display', 'block');
-//     $("#nav").text("Customer Manage");
-//     text = $('#nav').text();
-// });
-//
-// $("#lnkItem").click(function () {
-//     hideAll();
-//     $("#itemContent").css('display', 'block');
-//     $("#nav").text("Item Manage");
-//     text = $('#nav').text();
-// });
-//
-// $("#lnkOrders").click(function () {
-//     hideAll();
-//     $("#orderContent").css('display', 'block');
-//     $("#nav").text("Order Manage");
-//     text = $('#nav').text();
-// });
+$('#lnkHome').click(function () {
+    hideAll();
+    $("#dashboardContent").css('display', 'block');
+    $("#nav").text("Dashboard");
+    text = $('#nav').text();
+});
 
 $("#lnkAbout").click(function () {
     hideAll();
@@ -81,23 +59,23 @@ $("#lnkProduct").click(function () {
     $("#dashboardContent4").css('display', 'block');
 });
 
-// $('#btnLogin').click(function () {
-//     hideAll();
-//     $("#dashboardContent1").css('display', 'block');
-//     $("#dashboardContent2").css('display', 'block');
-//     $("#dashboardContent3").css('display', 'block');
-//     $("#dashboardContent4").css('display', 'block');
-// });
+$('#btnLogin').click(function () {
+    hideAll();
+    $("#dashboardContent1").css('display', 'block');
+    $("#dashboardContent2").css('display', 'block');
+    $("#dashboardContent3").css('display', 'block');
+    $("#dashboardContent4").css('display', 'block');
+});
 
-// $('#btnSignForm').click(function () {
-//     hideAll();
-//     $("#signInContent").css('display', 'block');
-// });
-//
-// $('#btnLoginForm').click(function () {
-//     hideAll();
-//     $("#loginContent").css('display', 'block');
-// });
+$('#btnSignForm').click(function () {
+    hideAll();
+    $("#signInContent").css('display', 'block');
+});
+
+$('#btnLoginForm').click(function () {
+    hideAll();
+    $("#loginContent").css('display', 'block');
+});
 
 function hideAll() {
     $("#dashboardContent1,#dashboardContent2,#dashboardContent3,#dashboardContent4,#aboutContent," +

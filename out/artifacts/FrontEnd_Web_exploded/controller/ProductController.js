@@ -2,7 +2,7 @@
  * @author Sandaru Kithshan <skithshan93@gmail.com> (github.com/Sandaru293)
  * @since 10/18/2021
  */
-loadAllProducts();
+
 
 $("#btnSaveProduct").click(function () {
 
@@ -16,12 +16,14 @@ $("#btnSaveProduct").click(function () {
 
         success: function (data) {
             console.log(data);
-            loadAllProducts();
         }
     });
 });
 
-function loadDetail() {
+loadAllCustomers();
+
+function loadAllCustomers() {
+    $("#tblProduct").empty();
     $.ajax({
         url: 'product',
         method: 'get',
@@ -29,9 +31,9 @@ function loadDetail() {
         dataType: "json",
         success: function (data, textState, xhr) {
 
-            for (let pr of data) {
-                let h5 = `${pr.proName}`;
-                $("#header1").text(h5);
+            for (let cus of data) {
+                var row = `<tr><td>${cus.proName}</td><td>${cus.proType}</td><td>${cus.size}</td><td>${cus.price}</td></tr>`;
+                $("#tblProduct").append(row);
             }
         }
     });
@@ -84,7 +86,7 @@ $("#btnUpdateProduct").click(function () {
     let price = $("#price").val();
 
     $.ajax({
-        url: 'product',
+        url: 'http://localhost:8080/FrontEnd_Web_exploded/api/v1/product',
         method: 'put',
         async: true,
         contentType: "application/json",
@@ -114,5 +116,28 @@ $("#btnDeleteProduct").click(function () {
     });
 });
 
+$("#btnSearchProduct").click(function () {
+
+    let proName = $("#proName").val();
+    let proType = $("#proType").val();
+    let size = $("#size").val();
+    let price = $("#price").val();
+
+    $.ajax({
+        url: 'product?proName=' + proName,
+        method: 'get',
+        async: true,
+        contentType: "application/json",
+        data: JSON.stringify({
+            proName: $("#proName").set(),
+            proType: $("#proType").set(),
+            size: $("#size").val(),
+            price: $("#price").val()
+        }),
+        success: function (data, responseState, xhr) {
+            console.log(data);
+        }
+    });
+});
 
 
