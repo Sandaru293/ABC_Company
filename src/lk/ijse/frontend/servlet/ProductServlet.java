@@ -108,7 +108,9 @@ public class ProductServlet extends HttpServlet {
             }
             writer.close();
 
-        }  catch (SQLException | ClassNotFoundException throwables) {
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
@@ -132,7 +134,9 @@ public class ProductServlet extends HttpServlet {
             }
             writer.close();
 
-        }  catch (SQLException | ClassNotFoundException throwables) {
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }

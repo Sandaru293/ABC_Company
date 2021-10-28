@@ -20,24 +20,71 @@ $("#btnSaveProduct").click(function () {
     });
 });
 
-loadAllCustomers();
+$("#btnUpdateProduct").click(function () {
 
-function loadAllCustomers() {
-    $("#tblProduct").empty();
+    let proName = $("#proName").val();
+    let proType = $("#proType").val();
+    let size = $("#size").val();
+    let price = $("#price").val();
+
     $.ajax({
         url: 'product',
-        method: 'get',
+        method: 'put',
         async: true,
-        dataType: "json",
-        success: function (data, textState, xhr) {
-
-            for (let cus of data) {
-                var row = `<tr><td>${cus.proName}</td><td>${cus.proType}</td><td>${cus.size}</td><td>${cus.price}</td></tr>`;
-                $("#tblProduct").append(row);
-            }
+        contentType: "application/json",
+        data: JSON.stringify({
+            proName: proName,
+            proType: proType,
+            size: size,
+            price: price
+        }),
+        success: function (data, responseState, xhr) {
+            console.log(data);
         }
     });
-}
+});
+
+// loadAllCustomers();
+//
+// function loadAllCustomers() {
+//     $("#tblProduct").empty();
+//     $.ajax({
+//         url: 'product',
+//         method: 'get',
+//         async: true,
+//         dataType: "json",
+//         success: function (data, textState, xhr) {
+//
+//             for (let cus of data) {
+//                 var row = `<tr><td>${cus.proName}</td><td>${cus.proType}</td><td>${cus.size}</td><td>${cus.price}</td></tr>`;
+//                 $("#tblProduct").append(row);
+//             }
+//         }
+//     });
+// }
+$("#btnSearchProduct").click(function () {
+
+    let proName = $("#proName").val();
+    let proType = $("#proType").val();
+    let size = $("#size").val();
+    let price = $("#price").val();
+
+    $.ajax({
+        url: 'product?proName=' + proName,
+        method: 'get',
+        async: true,
+        contentType: "application/json",
+        data: JSON.stringify({
+            proName: $("#proName").set(proName),
+            proType: $("#proType").set(proType),
+            size: $("#size").val(size),
+            price: $("#price").val(price)
+        }),
+        success: function (data, responseState, xhr) {
+            console.log(data);
+        }
+    });
+});
 
 $("#btnSendFile").click(function () {
 
@@ -60,50 +107,6 @@ $("#btnSendFile").click(function () {
     });
 });
 
-function loadAllProducts() {
-    $("#tblProduct").empty();
-    $.ajax({
-        url: 'product',
-        method: 'get',
-        async: true,
-        dataType: "json",
-        success: function (data, textState, xhr) {
-
-            for (let pr of data) {
-                var row = `<tr><td>${pr.proName}</td><td>${pr.proType}</td><td>${pr.size}</td>
-                           <td>${pr.price}</td></tr>`;
-                $("#tblProduct").append(row);
-            }
-        }
-    });
-}
-
-$("#btnUpdateProduct").click(function () {
-
-    let proName = $("#proName").val();
-    let proType = $("#proType").val();
-    let size = $("#size").val();
-    let price = $("#price").val();
-
-    $.ajax({
-        url: 'http://localhost:8080/FrontEnd_Web_exploded/api/v1/product',
-        method: 'put',
-        async: true,
-        contentType: "application/json",
-        data: JSON.stringify({
-            proName: proName,
-            proType: proType,
-            size: size,
-            price: price
-        }),
-        success: function (data, responseState, xhr) {
-            console.log(data);
-            loadAllProducts();
-        }
-    });
-});
-
-
 $("#btnDeleteProduct").click(function () {
     let proName = $("#proName").val();
     $.ajax({
@@ -116,28 +119,6 @@ $("#btnDeleteProduct").click(function () {
     });
 });
 
-$("#btnSearchProduct").click(function () {
 
-    let proName = $("#proName").val();
-    let proType = $("#proType").val();
-    let size = $("#size").val();
-    let price = $("#price").val();
-
-    $.ajax({
-        url: 'product?proName=' + proName,
-        method: 'get',
-        async: true,
-        contentType: "application/json",
-        data: JSON.stringify({
-            proName: $("#proName").set(),
-            proType: $("#proType").set(),
-            size: $("#size").val(),
-            price: $("#price").val()
-        }),
-        success: function (data, responseState, xhr) {
-            console.log(data);
-        }
-    });
-});
 
 

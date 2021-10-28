@@ -5,7 +5,7 @@
     <title>ABC Company</title>
     <meta content="width=device-width initial-scale=1" name="viewport">
 <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <link href="assests/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assests/css/bootstrap.min.css">
 <!--    rel="stylesheet"-->
     <link href="assests/css/styles.css" rel="stylesheet">
     <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -42,7 +42,7 @@
         .button10 {background-color: black;height: 30px;padding: 5px 20px;}
         .button11 {background-color: black;height: 30px;padding: 5px 20px;}
         .button12 {background-color: black;height: 30px;padding: 5px 20px;}
-        .button13 {background-color: blue;}
+        /*.button13 {background-color: blue;}*/
 
         body > section:nth-child(1) {
             width: available;
@@ -649,8 +649,8 @@
             margin: auto;
         }
 
-        body {font-family: Arial, Helvetica, sans-serif;}
-        form {border: 3px solid #f1f1f1;}
+        body >  section:nth-child(10) {font-family: Arial, Helvetica, sans-serif;}
+        body >  section:nth-child(10) > form {border: 3px solid #f1f1f1;}
 
         input[type=text], input[type=password] {
             width: 100%;
@@ -661,7 +661,7 @@
             box-sizing: border-box;
         }
 
-        button {
+        .button13 {
             background-color: #04AA6D;
             color: white;
             padding: 14px 20px;
@@ -675,12 +675,6 @@
             opacity: 0.8;
         }
 
-        .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: #f44336;
-        }
-
         .imgcontainer {
             text-align: center;
             margin: 24px 0 12px 0;
@@ -691,7 +685,7 @@
             border-radius: 50%;
         }
 
-        .container {
+        body >  section:nth-child(10) .container  {
             padding: 16px;
         }
 
@@ -705,9 +699,6 @@
             span.psw {
                 display: block;
                 float: none;
-            }
-            .cancelbtn {
-                width: 100%;
             }
         }
 
@@ -835,103 +826,27 @@
 </section>
 
 <section id="productContent" class="container">
-    <br>
-    <section class="row">
-        <div class="col-md-4">
-            <form id="formProduct">
-                <div>
-                    <label class="form-label" for="proName">proName</label>
-                    <input class="form-control" id="proName" name="proName" type="text">
-                </div>
-                <div>
-                    <label class="form-label" for="proType">proType</label>
-                    <input class="form-control" id="proType" name="proType" type="text">
-                </div>
-                <div>
-                    <label class="form-label" for="size">size</label>
-                    <input class="form-control" id="size" name="size" type="text">
-                </div>
-                <div>
-                    <label class="form-label" for="price">price</label>
-                    <input class="form-control" id="price" name="price" type="text">
-                </div>
-                <div class="row">
-                    <div class="col-9">
-                        <label class="form-label" for="file">Upload Photo</label>
-                        <input class="form-control" id="file" name="file" type="file">
-                    </div>
-                    <div class="col-9">
-                        <label class="form-label" for="file">Upload Photo</label>
-                        <input class="form-control" id="file3" name="file" type="file">
-                    </div>
-                    <div class="col-2 mt-3">
-                        <button class="btn btn-dark mt-3" id="btnSendFile" type="button">Upload</button>
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <button class="btn btn-success" id="btnSaveProduct" type="button">Save</button>
-                    <button class="btn btn-danger" id="btnDeleteProduct" type="button">Delete</button>
-                    <button class="btn btn-warning" id="btnUpdateProduct" type="button">Update</button>
-                    <button class="btn btn-light" id="btnSearchProduct" type="button">Search</button>
-                </div>
-            </form>
-        </div>
-        </div>
-        <div class="col-md-8">
-            <table class="table table-bordered table-hover">
-                <thead class="bg-primary text-white">
-                <tr>
-                    <th>proName</th>
-                    <th>proType</th>
-                    <th>size</th>
-                    <th>price</th>
-                </tr>
-                </thead>
-                <tbody id="tblProduct">
+    <form id="formProduct">
+        <div class="container">
+            <label for="proName"><b>proName</b></label>
+            <input type="text" id="proName" placeholder="Enter proName" name="proName" required>
 
-                </tbody>
-            </table>
+            <label for="proType"><b>proType</b></label>
+            <input type="text" id="proType" placeholder="Enter proType" name="proType" required>
+
+            <label for="size"><b>size</b></label>
+            <input type="text" id="size" placeholder="Enter size" name="size" required>
+
+            <label for="price"><b>price</b></label>
+            <input type="text" id="price" placeholder="Enter price" name="price" required>
+
+            <button id="btnSaveProduct" type="button" class="button button13">Save</button><br>
+            <button id="btnDeleteProduct" type="button" class="button button13">Delete</button><br>
+            <button id="btnUpdateProduct" type="button" class="button button13">Update</button><br>
+            <button id="btnSearchProduct" type="button" class="button button13">Search</button><br>
         </div>
-    </section>
+    </form>
 </section>
-</section>
-
-<!--<section id="loginContent" class="container p-5 mt-auto">-->
-<!--    <div class="container">-->
-
-<!--       <div class="jumbotron">-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-5">-->
-<!--                <div class="card">-->
-<!--                    <div class="card-header bg-primary font-weight-bolder text-center">Login</div>-->
-<!--                    <div class="card-body">-->
-<!--                        <form id="formLogin">-->
-<!--                            <div>-->
-<!--                                <label class="form-label" for="userId">User Name</label>-->
-<!--                                <input class="form-control" id="userId" name="userId" type="text">-->
-<!--                            </div>-->
-<!--                            <div>-->
-<!--                                <label class="form-label" for="password">Password</label>-->
-<!--                                <input class="form-control" id="password" name="password" type="Password">-->
-<!--                            </div>-->
-<!--                            <div class="row-cols-1 mt-3">-->
-<!--                                <button class="btn btn-primary" id="btnLogin" type="button">Login</button>-->
-
-<!--                            </div>-->
-
-<!--                            <div class="row-cols-1 mt-3">-->
-<!--                                <label class="form-label" for="password">don't have account?</label>-->
-<!--                                <button class="btn btn-success" id="btnSignForm" type="button">Sign in</button>-->
-<!--                            </div>-->
-<!--                        </form>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--       </div>-->
-<!--    </div>-->
-<!--    </div>-->
-<!--</section>-->
 
 <section id="loginContent" class="container">
     <form id="formLogin">
@@ -947,7 +862,7 @@
             <input type="password" id="password" placeholder="Enter Password" name="password" required>
 
             <button id="btnLogin" type="button" class="button button13">Login</button><br>
-            <button id="btnSignForm" type="button">SignIn</button>
+            <button id="btnSignForm" type="button" class="button button13">SignIn</button>
         </div>
     </form>
 </section>

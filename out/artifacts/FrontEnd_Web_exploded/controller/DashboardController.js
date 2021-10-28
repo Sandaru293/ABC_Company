@@ -40,7 +40,6 @@ $("#lnkBed").click(function () {
     $("#bedContent").css('display', 'block');
     $("#dashboardContent1").css('display', 'block');
     $("#dashboardContent2").css('display', 'block');
-    $("#dashboardContent4").css('display', 'block');
 });
 
 $("#lnkBed1").click(function () {
@@ -48,7 +47,6 @@ $("#lnkBed1").click(function () {
     $("#bedContent1").css('display', 'block');
     $("#dashboardContent1").css('display', 'block');
     $("#dashboardContent2").css('display', 'block');
-    $("#dashboardContent4").css('display', 'block');
 });
 
 $("#lnkProduct").click(function () {
@@ -56,7 +54,6 @@ $("#lnkProduct").click(function () {
     $("#productContent").css('display', 'block');
     $("#dashboardContent1").css('display', 'block');
     $("#dashboardContent2").css('display', 'block');
-    $("#dashboardContent4").css('display', 'block');
 });
 
 $('#btnLogin').click(function () {

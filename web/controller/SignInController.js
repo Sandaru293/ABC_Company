@@ -89,3 +89,47 @@ $("#btnLogin").click(function () {
 //     });
 //
 // }
+
+
+// $("#btnUpdate").click(function () {
+//
+//     let nic = $("#nic").val();
+//     let name = $("#name").val();
+//     let email = $("#email").val();
+//     let licenseNumber = $("#licenseNumber").val();
+
+//
+//     $.ajax({
+//         url: 'customer',
+//         method: 'put',
+//         async: true,
+//         contentType: "application/json",
+//         data: JSON.stringify({
+//             nic: nic,
+//             name: name,
+//             email: email,
+//             licenseNumber: licenseNumber,
+//         }),
+//         success: function (data, responseState, xhr) {
+//             console.log(data);
+//         }
+//     });
+// });
+
+
+// function loadAllCustomers() {
+//     $("#tbody").empty();
+//     $.ajax({
+//         url: 'customer',
+//         method: 'get',
+//         async: true,
+//         dataType: "json",
+//         success: function (data, textState, xhr) {
+//
+//             for (let cus of data) {
+//                 var row = `<tr><td>${cus.nic}</td><td>${cus.name}</td><td>${cus.email}</td><td>${cus.licenseNumber}</td><td>${cus.address}</td><td>${cus.contactNumber}</td></tr>`;
+//                 $("#tbody").append(row);
+//             }
+//         }
+//     });
+// }
