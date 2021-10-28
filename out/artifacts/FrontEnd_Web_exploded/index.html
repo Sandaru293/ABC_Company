@@ -649,6 +649,24 @@
             margin: auto;
         }
 
+        body >  section:nth-child(9) > form > div:nth-child(1){
+            width: 600px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        body >  section:nth-child(9) > form > div:nth-child(2){
+            width: 600px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: auto;
+        }
+
         body >  section:nth-child(10) {font-family: Arial, Helvetica, sans-serif;}
         body >  section:nth-child(10) > form {border: 3px solid #f1f1f1;}
 
@@ -689,17 +707,61 @@
             padding: 16px;
         }
 
-        span.psw {
+        span.password {
             float: right;
             padding-top: 16px;
         }
 
         /* Change styles for span and cancel button on extra small screens */
         @media screen and (max-width: 300px) {
-            span.psw {
+            span.password {
                 display: block;
                 float: none;
             }
+        }
+
+        body >  section:nth-child(9) > form > div:nth-child(2) {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body >  section:nth-child(9) > form > div:nth-child(2) {
+            font-family: 'Inter', sans-serif;
+            color: #343a40;
+            line-height: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        body >  section:nth-child(9) > div:nth-child(2)> table {
+            width: 800px;
+            border-right-color: #ffffff;
+            margin-top: 100px;
+            font-size: 18px;
+            /* /* border: 1px solid #343a40; */
+            border-collapse: collapse;
+        }
+
+        th, td {
+            /* border: 1px solid #343a40; */
+            padding: 16px 24px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #087f5b;
+            color: #fff;
+            width: 25%;
+        }
+
+        tbody tr:nth-child(odd){
+            background-color: #f8f9fa;
+        }
+
+
+        tbody tr:nth-child(even){
+            background-color: #e9ecef;
         }
 
 
@@ -828,22 +890,38 @@
 <section id="productContent" class="container">
     <form id="formProduct">
         <div class="container">
-            <label for="proName"><b>proName</b></label>
-            <input type="text" id="proName" placeholder="Enter proName" name="proName" required>
+            <label for="proName"><b>Product Name</b></label>
+            <input type="text" id="proName" placeholder="Enter Product Name" name="proName" required>
 
-            <label for="proType"><b>proType</b></label>
-            <input type="text" id="proType" placeholder="Enter proType" name="proType" required>
+            <label for="proType"><b>Product Type</b></label>
+            <input type="text" id="proType" placeholder="Enter Product Type" name="proType" required>
 
-            <label for="size"><b>size</b></label>
-            <input type="text" id="size" placeholder="Enter size" name="size" required>
+            <label for="size"><b>Size</b></label>
+            <input type="text" id="size" placeholder="Enter Size" name="size" required>
 
-            <label for="price"><b>price</b></label>
-            <input type="text" id="price" placeholder="Enter price" name="price" required>
+            <label for="price"><b>Price</b></label>
+            <input type="text" id="price" placeholder="Enter Price" name="price" required>
 
             <button id="btnSaveProduct" type="button" class="button button13">Save</button><br>
             <button id="btnDeleteProduct" type="button" class="button button13">Delete</button><br>
             <button id="btnUpdateProduct" type="button" class="button button13">Update</button><br>
             <button id="btnSearchProduct" type="button" class="button button13">Search</button><br>
+        </div>
+        <div class="container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Type</th>
+                    <th>Size</th>
+                    <th>Price</th>
+                </tr>
+                </thead>
+
+                <tbody id="tblProduct">
+
+                </tbody>
+            </table>
         </div>
     </form>
 </section>

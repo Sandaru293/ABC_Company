@@ -2,7 +2,7 @@
  * @author Sandaru Kithshan <skithshan93@gmail.com> (github.com/Sandaru293)
  * @since 10/18/2021
  */
-
+loadAllProducts();
 
 $("#btnSaveProduct").click(function () {
 
@@ -44,24 +44,30 @@ $("#btnUpdateProduct").click(function () {
     });
 });
 
-// loadAllCustomers();
-//
-// function loadAllCustomers() {
-//     $("#tblProduct").empty();
-//     $.ajax({
-//         url: 'product',
-//         method: 'get',
-//         async: true,
-//         dataType: "json",
-//         success: function (data, textState, xhr) {
-//
-//             for (let cus of data) {
-//                 var row = `<tr><td>${cus.proName}</td><td>${cus.proType}</td><td>${cus.size}</td><td>${cus.price}</td></tr>`;
-//                 $("#tblProduct").append(row);
-//             }
-//         }
-//     });
-// }
+
+function loadAllProducts() {
+    $("#tblProduct").empty();
+    $.ajax({
+        url: 'product',
+        method: 'get',
+        async: true,
+        dataType: "json",
+        success: function (data, textState, xhr) {
+
+            for (let pro of data) {
+                var row = `<tr>
+                                <td>${pro.proName}</td>
+                                <td>${pro.proType}</td>
+                                <td>${pro.size}</td>
+                                <td>${pro.price}</td>
+                            </tr>`;
+
+                $("#tblProduct").append(row);
+            }
+        }
+    });
+}
+
 $("#btnSearchProduct").click(function () {
 
     let proName = $("#proName").val();
