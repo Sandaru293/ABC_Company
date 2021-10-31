@@ -94,23 +94,50 @@ $("#btnSearchProduct").click(function () {
 
 $("#btnSendFile").click(function () {
 
-    var fileObject = $("#file")[0].files[0];
-    var fileName = $("#file")[0].files[0].name;
+    // var fileObject = $("#file")[0].files[0];
+    // var fileName = $("#file")[0].files[0].name;
+    //
+    // var data = new FormData();
+    // data.append("file", fileObject, fileName);
+    //
+    // $.ajax({
+    //     url: 'up',
+    //     method: 'post',
+    //     async: true,
+    //     processData: false,
+    //     contentType: false,
+    //     data: data,
+    //     success: function () {
+    //         alert("File Uploaded");
+    //     }
+    // });
+    var fd = new FormData();
 
-    var data = new FormData();
-    data.append("file", fileObject, fileName);
+    var files = $('#file')[0].files;
 
-    $.ajax({
-        url: 'up',
-        method: 'post',
-        async: true,
-        processData: false,
-        contentType: false,
-        data: data,
-        success: function () {
-            alert("File Uploaded");
-        }
-    });
+    // Check file selected or not
+    if(files.length > 0 ){
+
+        fd.append('file',files[0]);
+
+        $.ajax({
+            url:'upload.php',
+            type:'post',
+            data:fd,
+            contentType: false,
+            processData: false,
+            success:function(response){
+                if(response != 0){
+                    $("#img").attr("src",response);
+                    $('.preview img').show();
+                }else{
+                    alert('File not uploaded');
+                }
+            }
+        });
+    }else{
+        alert("Please select a file.");
+    }
 });
 
 $("#btnDeleteProduct").click(function () {
