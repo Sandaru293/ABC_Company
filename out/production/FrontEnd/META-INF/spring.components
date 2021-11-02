@@ -1,4 +1,7 @@
 lk.ijse.frontend.servlet.CrunchifyFileUploadController=org.springframework.stereotype.Component
 lk.ijse.frontend.servlet.FileUploadServlet=javax.servlet.annotation.WebServlet,javax.servlet.annotation.MultipartConfig
+lk.ijse.frontend.servlet.FileUploadServlet2=javax.servlet.annotation.WebServlet,javax.servlet.annotation.MultipartConfig
+lk.ijse.frontend.servlet.FileUploadServlet3=javax.servlet.annotation.WebServlet,javax.servlet.annotation.MultipartConfig
+lk.ijse.frontend.servlet.FileUploadServlet4=javax.servlet.annotation.WebServlet,javax.servlet.annotation.MultipartConfig
 lk.ijse.frontend.servlet.ProductServlet=javax.servlet.annotation.WebServlet
 lk.ijse.frontend.servlet.UserServlet=javax.servlet.annotation.WebServlet

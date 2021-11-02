@@ -94,50 +94,113 @@ $("#btnSearchProduct").click(function () {
 
 $("#btnSendFile").click(function () {
 
-    // var fileObject = $("#file")[0].files[0];
-    // var fileName = $("#file")[0].files[0].name;
+    var fileObject = $("#file")[0].files[0];
+    var fileName = $("#file")[0].files[0].name;
+
+    var data = new FormData();
+    data.append("file", fileObject, fileName);
+
+    $.ajax({
+        url: 'up',
+        method: 'post',
+        async: true,
+        processData: false,
+        contentType: false,
+        data: data,
+        success: function () {
+            alert("File Uploaded");
+        }
+    });
+    // var fd = new FormData();
     //
-    // var data = new FormData();
-    // data.append("file", fileObject, fileName);
+    // var files = $('#file')[0].files;
     //
-    // $.ajax({
-    //     url: 'up',
-    //     method: 'post',
-    //     async: true,
-    //     processData: false,
-    //     contentType: false,
-    //     data: data,
-    //     success: function () {
-    //         alert("File Uploaded");
-    //     }
-    // });
-    var fd = new FormData();
+    // // Check file selected or not
+    // if(files.length > 0 ){
+    //
+    //     fd.append('file',files[0]);
+    //
+    //     $.ajax({
+    //         url:'upload.php',
+    //         type:'post',
+    //         data:fd,
+    //         contentType: false,
+    //         processData: false,
+    //         success:function(response){
+    //             if(response != 0){
+    //                 $("#img").attr("src",response);
+    //                 $('.preview img').show();
+    //             }else{
+    //                 alert('File not uploaded');
+    //             }
+    //         }
+    //     });
+    // }else{
+    //     alert("Please select a file.");
+    // }
+});
 
-    var files = $('#file')[0].files;
+$("#btnSendFile2").click(function () {
 
-    // Check file selected or not
-    if(files.length > 0 ){
+    var fileObject = $("#file2")[0].files[0];
+    var fileName = $("#file2")[0].files[0].name;
 
-        fd.append('file',files[0]);
+    var data = new FormData();
+    data.append("file2", fileObject, fileName);
 
-        $.ajax({
-            url:'upload.php',
-            type:'post',
-            data:fd,
-            contentType: false,
-            processData: false,
-            success:function(response){
-                if(response != 0){
-                    $("#img").attr("src",response);
-                    $('.preview img').show();
-                }else{
-                    alert('File not uploaded');
-                }
-            }
-        });
-    }else{
-        alert("Please select a file.");
-    }
+    $.ajax({
+        url: 'up2',
+        method: 'post',
+        async: true,
+        processData: false,
+        contentType: false,
+        data: data,
+        success: function () {
+            alert("File Uploaded");
+        }
+    });
+});
+
+$("#btnSendFile3").click(function () {
+
+    var fileObject = $("#file3")[0].files[0];
+    var fileName = $("#file3")[0].files[0].name;
+
+    var data = new FormData();
+    data.append("file3", fileObject, fileName);
+
+    $.ajax({
+        url: 'up3',
+        method: 'post',
+        async: true,
+        processData: false,
+        contentType: false,
+        data: data,
+        success: function () {
+            alert("File Uploaded");
+        }
+    });
+});
+
+$("#btnSendFile4").click(function () {
+
+    var fileObject = $("#file4")[0].files[0];
+    var fileName = $("#file4")[0].files[0].name;
+
+    var data = new FormData();
+    data.append("file4", fileObject, fileName);
+
+    $.ajax({
+        url: 'up4',
+        method: 'post',
+        async: true,
+        processData: false,
+        contentType: false,
+        data: data,
+        success: function () {
+            alert("File Uploaded");
+        }
+    });
 });
 
 $("#btnDeleteProduct").click(function () {

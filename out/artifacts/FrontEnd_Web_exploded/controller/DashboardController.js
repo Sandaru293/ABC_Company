@@ -27,6 +27,14 @@ $("#lnkHome").click(function () {
     $("#dashboardContent4").css('display', 'block');
 });
 
+$("#lnkContact").click(function () {
+    hideAll();
+    $("#dashboardContent1").css('display', 'block');
+    $("#dashboardContent2").css('display', 'block');
+    $("#contactContent").css('display', 'block');
+    $("#dashboardContent4").css('display', 'block');
+});
+
 $("#lnkGallery").click(function () {
     hideAll();
     $("#galleryContent").css('display', 'block');
@@ -119,6 +127,6 @@ $('#btnLoginForm').click(function () {
 function hideAll() {
     $("#dashboardContent1,#dashboardContent2,#dashboardContent3,#dashboardContent4,#aboutContent," +
         "#galleryContent,#bedContent,#bedContent1,#productContent,#loginContent,#signInContent,#LivingRoomContent," +
-        "#DiningContent,#DiningContentContent1,#FurnitureContent,#LivingRoomContent1,#FurnitureContentContent1").css('display', 'none');
+        "#DiningContent,#DiningContentContent1,#FurnitureContent,#LivingRoomContent1,#FurnitureContentContent1,#contactContent").css('display', 'none');
 }
 
